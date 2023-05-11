@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventory Item</title>
+</head>
+<body>
+    {% if inventoryID %}
+        <p>Inventory ID: {{ inventoryID }}</p>
+    {% else %}
+        <p>No Inventory ID</p>
+    {% endif %}
+
+    {% if inventoryName %}
+        <p>Inventory Name: {{ inventoryName }}</p>
+    {% else %}
+        <p>No Inventory Name</p>
+    {% endif %}
+
+    {% if department %}
+        <p>Department: {{ department }}</p>
+    {% else %}
+        <p>No department</p>
+    {% endif %}
+
+    {% if inventoryPrice %}
+        <p>Inventory Price: {{ inventoryPrice }}</p>
+    {% else %}
+        <p>No Inventory Price</p>
+    {% endif %}
+
+    {% if inventoryQuantity %}
+        <p>Inventory Quantity: {{ inventoryQuantity }}</p>
+    {% else %}
+        <p>No Inventory Quantity</p>
+    {% endif %}
+
+    {% if inventoryValue %}
+        <p>Inventory Value: {{ inventoryValue }}</p>
+    {% else %}
+        <p>No Inventory Value</p>
+    {% endif %}
+</body>
+</html>

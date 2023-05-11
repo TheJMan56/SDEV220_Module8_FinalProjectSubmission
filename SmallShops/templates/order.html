@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order</title>
+</head>
+<body>
+    {% if orderID %}
+        <p>Order ID: {{ orderID }}</p>
+    {% else %}
+        <p>No Order ID</p>
+    {% endif %}
+
+    {% if userID %}
+        <p>User ID: {{ userID }}</p>
+    {% else %}
+        <p>No User ID</p>
+    {% endif %}
+
+    {% if creditCard %}
+        <p>Credit Card: {{ creditCard }}</p>
+    {% else %}
+        <p>No Credit Card</p>
+    {% endif %}
+
+    {% if city %}
+        <p>City: {{ city }}</p>
+    {% else %}
+        <p>No City</p>
+    {% endif %}
+
+    {% if state %}
+        <p>State: {{ state }}</p>
+    {% else %}
+        <p>No State</p>
+    {% endif %}
+
+    {% if country %}
+        <p>Country: {{ country }}</p>
+    {% else %}
+        <p>No Country</p>
+    {% endif %}
+
+    {% if address %}
+        <p>Address: {{ address }}</p>
+    {% else %}
+        <p>No Address</p>
+    {% endif %}
+
+    {% if items %}
+        <p>Items: {{ items }}</p>
+    {% else %}
+        <p>No Items</p>
+    {% endif %}
+
+    {% if pricePerItem %}
+        <p>Price Per Item: {{ pricePerItem }}</p>
+    {% else %}
+        <p>No Price Per Item</p>
+    {% endif %}
+
+    {% if quantityPerItem %}
+        <p>Quantity Per Item: {{ quantityPerItem }}</p>
+    {% else %}
+        <p>No Quantity Per Item</p>
+    {% endif %}
+
+    {% if costPerItem %}
+        <p>Cost Per Item: {{ costPerItem }}</p>
+    {% else %}
+        <p>No Cost Per Item</p>
+    {% endif %}
+
+    {% if originalQuantityPerItem %}
+        <p>Original Quantity Per Item: {{ originalQuantityPerItem }}</p>
+    {% else %}
+        <p>No Original Quantity Per Item</p>
+    {% endif %}
+
+    {% if originalValuePerItem %}
+        <p>Original Value Per Item: {{ originalValuePerItem }}</p>
+    {% else %}
+        <p>No Original Value Per Item</p>
+    {% endif %}
+
+    {% if alteredQuantityPerItem %}
+        <p>Altered Quantity Per Item: {{ alteredQuantityPerItem }}</p>
+    {% else %}
+        <p>No Altered Quantity Per Item</p>
+    {% endif %}
+
+    {% if alteredValuePerItem %}
+        <p>Altered Value Per Item: {{ alteredValuePerItem }}</p>
+    {% else %}
+        <p>No Altered Value Per Item</p>
+    {% endif %}
+
+    {% if totalCost %}
+        <p>Total Cost: {{ totalCost }}</p>
+    {% else %}
+        <p>No Total Cost</p>
+    {% endif %}
+
+    {% if date %}
+        <p>Date: {{ date }}</p>
+    {% else %}
+        <p>No Date</p>
+    {% endif %}
+</body>
+</html>

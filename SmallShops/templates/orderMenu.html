@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Management</title>
+</head>
+<body>
+    <form action="newOrder" method="GET">
+        <h1>New Order</h1>
+        <p><input type="submit" name="newOrder"></p>
+    </form>
+
+    <form action="outputOrder" method="GET">
+        <h1>Output Order</h1>
+        <p><input type="submit" name="outputOrder"></p>
+    </form>
+
+    <form action="retrieveOrder" method="GET">
+        <h1>Retrieve Order</h1>
+        <p>Order ID: <input type="number" name="orderID"></p>
+        <p><input type="submit" name="retrieveOrder"></p>
+    </form>
+
+    <form action="setAddress" method="GET">
+        <h1>Set Address</h1>
+        <p>City: <input type="text" name="city"></p>
+        <p>State: <input type="text" name="state"></p>
+        <p>Country: <input type="text" name="country"></p>
+        <p>Address: <input type="text" name="address"></p>
+        <p><input type="submit" name="setAddress"></p>
+    </form>
+
+    <form action="setPaymentMethod" method="GET">
+        <h1>Set Payment Method</h1>
+        <p>Credit Card: <input type="text" name="creditCard"></p>
+        <p><input type="submit" name="setPaymentMethod"></p>
+    </form>
+
+    <form action="addItem" method="GET">
+        <h1>Add Current Item</h1>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="addItem"></p>
+    </form>
+
+    <form action="addItemWithID" method="GET">
+        <h1>Add Item Through ID</h1>
+        <p>Inventory ID: <input type="number" name="inventoryID"></p>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="addItemWithID"></p>
+    </form>
+
+    <form action="removeItem" method="GET">
+        <h1>Remove Current Inventory Item</h1>
+        <p><input type="submit" name="removeItem"></p>
+    </form>
+
+    <form action="removeItemWithID" method="GET">
+        <h1>Remove Inventory Item With ID</h1>
+        <p><input type="number" name="inventoryID"></p>
+        <p><input type="submit" name="removeItemWithID"></p>
+    </form>
+
+    <form action="changeItemQuantity" method="GET">
+        <h1>Change Current Inventory Item Quantity</h1>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="changeItemQuantity"></p>
+    </form>
+
+    <form action="changeItemQuantityWithID" method="GET">
+        <h1>Change Inventory Item Quantity with ID</h1>
+        <p>Inventory ID: <input type="number" name="inventoryID"></p>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="changeItemQuantityWithID"></p>
+    </form>
+
+    <form action="finalizeOrder" method="GET">
+        <h1>Finalize Order</h1>
+        <p><input type="submit" name="finalizeOrder"></p>
+    </form>
+</body>
+</html>

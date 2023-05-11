@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User</title>
+</head>
+<body>
+    {% if userID %}
+        <p>User ID: {{ userID }}</p>
+    {% else %}
+        <p>No User ID</p>
+    {% endif %}
+
+    {% if userName %}
+        <p>User Name: {{ userName }}</p>
+    {% else %}
+        <p>No User Name</p>
+    {% endif %}
+
+    {% if email %}
+        <p>User Email: {{ email }}</p>
+    {% else %}
+        <p>No User Email</p>
+    {% endif %}
+
+    {% if loginPassword %}
+        <p>User Password: {{ loginPassword }}</p>
+    {% else %}
+        <p>No User Password</p>
+    {% endif %}
+
+    {% if creditCard %}
+        <p>User Credit Card: {{ creditCard }}</p>
+    {% else %}
+        <p>No User Credit Card</p>
+    {% endif %}
+
+    {% if city %}
+        <p>User City: {{ city }}</p>
+    {% else %}
+        <p>No User City</p>
+    {% endif %}
+
+    {% if state %}
+        <p>User State: {{ state }}</p>
+    {% else %}
+        <p>No User State</p>
+    {% endif %}
+
+    {% if country %}
+        <p>User Country: {{ country }}</p>
+    {% else %}
+        <p>No User Country</p>
+    {% endif %}
+
+    {% if address %}
+        <p>User Address: {{ address }}</p>
+    {% else %}
+        <p>No User Address</p>
+    {% endif %}
+
+    {% if phone %}
+        <p>User Phone: {{ phone }}</p>
+    {% else %}
+        <p>No User Phone</p>
+    {% endif %}
+</body>
+</html>

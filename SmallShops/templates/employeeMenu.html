@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Menu</title>
+</head>
+<body>
+
+    <form action="newInventoryItem" method="GET">
+        <h1>New Inventory Item</h1>
+        <p>Inventory Name: <input type="text" name="inventoryName"></p>
+        <p>Inventory Department: <input type="text" name="department"></p>
+        <p>Inventory Price: <input type="number" step="0.01" name="inventoryPrice"></p>
+        <p>Inventory Quantity: <input type="number" step="0.01" name="inventoryQuantity"></p>
+        <p><input type="submit" name="newInventoryItem"></p>
+    </form>
+
+    <form action="outputInventoryItem" method="GET">
+        <h1>Output Current Inventory Item</h1>
+        <p><input type="submit" name="outputInventoryItem"></p>
+    </form>
+
+    <form action="addCurrentInventoryItem" method="GET">
+        <h1>Add Current Inventory Item to Database</h1>
+        <p><input type="submit" name="addCurrentInventoryItem"></p>
+    </form>
+
+    <form action="addNewInventoryItem" method="GET">
+        <h1>Add New Inventory Item to Database</h1>
+        <p>Inventory Name: <input type="text" name="inventoryName"></p>
+        <p>Inventory Department: <input type="text" name="department"></p>
+        <p>Inventory Price: <input type="number" step="0.01" name="inventoryPrice"></p>
+        <p>Inventory Quantity: <input type="number" step="0.01" name="inventoryQuantity"></p>
+        <p><input type="submit" name="addNewInventoryItem"></p>
+    </form>
+
+    <form action="retrieveInventoryItem" method="GET">
+        <h1>Retrieve Inventory Item from Database</h1>
+        <p>Inventory ID: <input type="number" name="inventoryID"></p>
+        <p><input type="submit" name="retrieveInventoryItem"></p>
+    </form>
+
+    <form action="alterInventoryItem" method="GET">
+        <h1>Alter Current Inventory Item</h1>
+        <p>Inventory Name: <input type="text" name="inventoryName"></p>
+        <p>Inventory Department: <input type="text" name="department"></p>
+        <p>Inventory Price: <input type="number" step="0.01" name="inventoryPrice"></p>
+        <p>Inventory Quantity: <input type="number" step="0.01" name="inventoryQuantity"></p>
+        <p><input type="submit" name="alterInventoryItem"></p>
+    </form>
+
+    <form action="alterInventoryQuantity" method="GET">
+        <h1>Alter Current Inventory Item Quantity</h1>
+        <p>Inventory Quantity: <input type="number" step="0.01" name="inventoryQuantity"></p>
+        <p><input type="submit" name="alterInventoryQuantity"></p>
+    </form>
+
+    <form action="commitAlteredInventoryItem" method="GET">
+        <h1>Commit Alterations to Current Inventory Item to Database</h1>
+        <p><input type="submit" name="commitAlteredInventoryItem"></p>
+    </form>
+
+    <form action="deleteCurrentInventoryItem" method="GET">
+        <h1>Delete Current Inventory Item</h1>
+        <p><input type="submit" name="deleteCurrentInventoryItem"></p>
+    </form>
+
+    <form action="deleteSelectedInventoryItem" method="GET">
+        <h1>Delete Selected Inventory Item</h1>
+        <p>Inventory ID: <input type="number" name="inventoryID"></p>
+        <p><input type="submit" name="deleteSelectedInventoryItem"></p>
+    </form>
+
+    <form action="newUser" method="GET">
+        <h1>New User</h1>
+        <p>User Name: <input type="text" name="userName"></p>
+        <p>User Email: <input type="text" name="email"></p>
+        <p>User Password: <input type="text" name="loginPassword"></p>
+        <p>User Credit Card: <input type="text" name="creditCard"></p>
+        <p>User City: <input type="text" name="city"></p>
+        <p>User State: <input type="text" name="state"></p>
+        <p>User Country: <input type="text" name="country"></p>
+        <p>User Address: <input type="text" name="address"></p>
+        <p>User Phone: <input type="text" name="phone"></p>
+        <p><input type="submit" name="newUser"></p>
+    </form>
+
+    <form action="outputUser" method="GET">
+        <h1>Output Current User</h1>
+        <p><input type="submit" name="outputUser"></p>
+    </form>
+
+    <form action="addCurrentUser" method="GET">
+        <h1>Add Current User to Database</h1>
+        <p><input type="submit" name="addCurrentUser"></p>
+    </form>
+
+    <form action="addNewUser" method="GET">
+        <h1>Add New User to Database</h1>
+        <p>User Name: <input type="text" name="userName"></p>
+        <p>User Email: <input type="text" name="email"></p>
+        <p>User Password: <input type="text" name="loginPassword"></p>
+        <p>User Credit Card: <input type="text" name="creditCard"></p>
+        <p>User City: <input type="text" name="city"></p>
+        <p>User State: <input type="text" name="state"></p>
+        <p>User Country: <input type="text" name="country"></p>
+        <p>User Address: <input type="text" name="address"></p>
+        <p>User Phone: <input type="text" name="phone"></p>
+        <p><input type="submit" name="addNewUser"></p>
+    </form>
+
+    <form action="retrieveUser" method="GET">
+        <h1>Retrieve User</h1>
+        <p>User ID: <input type="number" name="userID"></p>
+        <p><input type="submit" name="retrieveUser"></p>
+    </form>
+
+    <form action="updateUserInfo" method="GET">
+        <h1>Update Current User Information</h1>
+        <p>User Name: <input type="text" name="userName"></p>
+        <p>User Password: <input type="text" name="loginPassword"></p>
+        <p>User Credit Card: <input type="text" name="creditCard"></p>
+        <p>User City: <input type="text" name="city"></p>
+        <p>User State: <input type="text" name="state"></p>
+        <p>User Country: <input type="text" name="country"></p>
+        <p>User Address: <input type="text" name="address"></p>
+        <p>User Phone: <input type="text" name="phone"></p>
+        <p><input type="submit" name="updateUserInfo"></p>
+    </form>
+
+    <form action="commitUpdatedInfo" method="GET">
+        <h1>Commit Alterations to Current User to Database</h1>
+        <p><input type="submit" name="commitUpdatedInfo"></p>
+    </form>
+
+    <form action="resetPassword" method="GET">
+        <h1>Update Current User Password</h1>
+        <p>User Password: <input type="text" name="loginPassword"></p>
+        <p><input type="submit" name="resetPassword"></p>
+    </form>
+
+    <form action="commitResetPassword" method="GET">
+        <h1>Commit Reset Password of Current User to Database</h1>
+        <p><input type="submit" name="commitResetPassword"></p>
+    </form>
+
+    <form action="deleteCurrentUser" method="GET">
+        <h1>Delete Current User</h1>
+        <p><input type="submit" name="deleteCurrentUser"></p>
+    </form>
+
+    <form action="deleteSelectedUser" method="GET">
+        <h1>Delete Selected User</h1>
+        <p>User ID: <input type="number" name="userID"></p>
+        <p><input type="submit" name="deleteSelectedUser"></p>
+    </form>
+
+    <form action="loginUser" method="GET">
+        <h1>User Login</h1>
+        <p>Email: <input type="text" name="email"></p>
+        <p>User Password: <input type="text" name="loginPassword"></p>
+        <p><input type="submit" name="loginUser"></p>
+    </form>
+
+    <form action="newOrder" method="GET">
+        <h1>New Order</h1>
+        <p><input type="submit" name="newOrder"></p>
+    </form>
+    
+    <form action="outputOrder" method="GET">
+        <h1>Output Order</h1>
+        <p><input type="submit" name="outputOrder"></p>
+    </form>
+    
+    <form action="retrieveOrder" method="GET">
+        <h1>Retrieve Order</h1>
+        <p>Order ID: <input type="number" name="orderID"></p>
+        <p><input type="submit" name="retrieveOrder"></p>
+    </form>
+    
+    <form action="setAddress" method="GET">
+        <h1>Set Address</h1>
+        <p>City: <input type="text" name="city"></p>
+        <p>State: <input type="text" name="state"></p>
+        <p>Country: <input type="text" name="country"></p>
+        <p>Address: <input type="text" name="address"></p>
+        <p><input type="submit" name="setAddress"></p>
+    </form>
+    
+    <form action="setPaymentMethod" method="GET">
+        <h1>Set Payment Method</h1>
+        <p>Credit Card: <input type="text" name="creditCard"></p>
+        <p><input type="submit" name="setPaymentMethod"></p>
+    </form>
+    
+    <form action="addItem" method="GET">
+        <h1>Add Current Item</h1>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="addItem"></p>
+    </form>
+    
+    <form action="addItemWithID" method="GET">
+        <h1>Add Item Through ID</h1>
+        <p>Inventory ID: <input type="number" name="inventoryID"></p>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="addItemWithID"></p>
+    </form>
+    
+    <form action="removeItem" method="GET">
+        <h1>Remove Current Inventory Item</h1>
+        <p><input type="submit" name="removeItem"></p>
+    </form>
+    
+    <form action="removeItemWithID" method="GET">
+        <h1>Remove Inventory Item With ID</h1>
+        <p><input type="number" name="inventoryID"></p>
+        <p><input type="submit" name="removeItemWithID"></p>
+    </form>
+    
+    <form action="changeItemQuantity" method="GET">
+        <h1>Change Current Inventory Item Quantity</h1>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="changeItemQuantity"></p>
+    </form>
+    
+    <form action="changeItemQuantityWithID" method="GET">
+        <h1>Change Inventory Item Quantity with ID</h1>
+        <p>Inventory ID: <input type="number" name="inventoryID"></p>
+        <p>Quantity: <input type="number" name="orderQuantity"></p>
+        <p><input type="submit" name="changeItemQuantityWithID"></p>
+    </form>
+    
+    <form action="finalizeOrder" method="GET">
+        <h1>Finalize Order</h1>
+        <p><input type="submit" name="finalizeOrder"></p>
+    </form>
+</body>
+</html>
