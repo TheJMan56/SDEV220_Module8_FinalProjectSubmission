@@ -7,6 +7,11 @@
 </head>
 <body>
 
+    <form action="listInventory" method="GET">
+        <h1>Inventory List</h1>
+        <p><input type="submit" name="listInventory"></p>
+    </form>
+
     <form action="newInventoryItem" method="GET">
         <h1>New Inventory Item</h1>
         <p>Inventory Name: <input type="text" name="inventoryName"></p>
@@ -70,6 +75,11 @@
         <h1>Delete Selected Inventory Item</h1>
         <p>Inventory ID: <input type="number" name="inventoryID"></p>
         <p><input type="submit" name="deleteSelectedInventoryItem"></p>
+    </form>
+
+    <form action="listUsers" method="GET">
+        <h1>User List</h1>
+        <p><input type="submit" name="listUsers"></p>
     </form>
 
     <form action="newUser" method="GET">
@@ -161,6 +171,11 @@
         <p>Email: <input type="text" name="email"></p>
         <p>User Password: <input type="text" name="loginPassword"></p>
         <p><input type="submit" name="loginUser"></p>
+    </form>
+
+    <form action="listOrders" method="GET">
+        <h1>Order List</h1>
+        <p><input type="submit" name="listOrders"></p>
     </form>
 
     <form action="newOrder" method="GET">

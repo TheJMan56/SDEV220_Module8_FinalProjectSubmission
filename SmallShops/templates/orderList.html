@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order List</title>
+</head>
+<body>
+    {% if orderList %}
+        {% for order in orderList %}
+            <p>{{ order }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No Orders</p>
+    {% endif %}
+</body>
+</html>
