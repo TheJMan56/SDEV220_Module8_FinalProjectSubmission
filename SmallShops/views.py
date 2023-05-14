@@ -1,3 +1,139 @@
+"""
+Programmer: Final Group 5
+    Justin W Daily
+    Noah Garritt Killian-Ruckman
+    Thomas L Layton
+Name of Program: SmallShopsRUs
+Description: This program provides a full management system for 
+inventory items, users, and orders that users can place.  Data in a 
+database file is accessed and manipulated through the class methods 
+for object classes that represent Inventory, Users, and Orders.
+
+List of classes and class methods:
+Inventory - the object class that represents inventory items
+    __init__ - creates the object
+    newInventoryItem - sets the attributes for the inventory object
+        inventoryID - ID value for database; initialized as None
+        inventoryName - name of inventory item
+        inventoryPrice - price per unit of inventory item
+        inventoryQuantity - total amount of inventory item
+        inventoryVaue - total value of inventory calculated by multiplying price with quantity
+    outputInventoryItem - outputs attributes of inventory object; only functional in the interactive interpreter
+    retrieveInventoryItem - uses SQL to define attributes of inventory object with database row using the row's ID value; assigns the inventory object the ID value of the database row
+    addInventoryItem - adds inventory object to database; ID value is automatically assigned based on the ID value of the database row
+    addNewInventoryItem - sets the attributes for an inventory object that is immediately added to the database
+    alterInventoryItem - resets all attributes for an inventory object, except for the ID value
+    alterInventoryQuantity - resets the quantity and value of the inventory object
+    commitAlteredInventoryItem - commits alterations of inventory object to database, if inventory object has an ID value, which is only obtained by adding the object to the database or retrieving the object from the database
+    deleteInventoryItem - deletes inventory object from database, if inventory object has an ID value
+Users - the object class that represents customers
+    __init__ - creates the object
+    newUser - sets the attributes for the user object
+        userID - ID value for the database; initialized as None
+        userName - name of the user
+        email - email of the user; cannot be changed
+        loginPassword - password to log the user in
+        creditCard - user's credit card
+        address - user's address
+        state - user's state
+        country - user's country
+        phone - user's phone number
+    outputUser - outputs attributes of user object; only functional in the interactive interpreter
+    addUser - adds user object to database; automatically assigns ID value based on ID value of the database row
+    addNewUser - sets the attributes for the user object and immediately adds the user object to the database
+    retrieveUser - sets the attributes for the user object using the row of a database that is obtained through the ID value of the row
+    updateInfo - resets all attributers for the user object; user ID cannot be reset
+    commitUpdatedInfo - commits the alterations of the user object to the database using the user ID for the row's ID
+    resetPassword - resets the password for the user object
+    commitResetPassword - commits the altered password to the database
+    deleteUser - deletes the inventory object from the database using the user ID for the row's ID
+    loginUser - retrieves a user object from the database using email and password
+        emailFlag - flag for if email is in database
+        passwordFlag - flag for if input password matches the stored password
+Orders - the object class that represents orders
+    __init__ - creates the object
+    newOrder - sets the attributes for the order object using a user object
+        orderID - ID value for the order object; initialized as None
+        userID - ID value for the user object placing the order; obtained from the user object
+        creditCard - credit card used for the order; obtained from the user object
+        address - address used for the order; obtained from the user object
+        city - city used for the order; obtained from the user object
+        state - state used for the order; obtained from the user object
+        country - country used for the order; obtained from the user object
+        items - a set that contains all inventory item ID's for inventory items in the order; initialized as empty
+        pricePerItem - a dictionary that contains the price per each inventory item ID; initialized as empty
+        quantityPerItem - a dictionary that contains the ordered quantity per each inventory item ID; initialized as empty
+        costPerItem - a dictionary that contains the ordered cost per each inventory item ID; initialized as empty; derived by multiplying price and quantity
+        originalQuantityPerItem - a dictionary that contains the original quantity per each inventory item ID in storage; initalized as empty
+        originalValuePerItem - a dictionary that contains the original value per each inventory item ID in storage; initalized as empty
+        alteredQuantityPerItem - a dictionary that contains the altered quantity per each inventory item ID in storage; initialized as empty; derived by substracting the original quantity by the ordered quantity
+        alteredValuePerItem - a dictionary that contains the altered value per each inventory item ID in storage; initialized as empty; derived by multiplying the price by the altered quantity
+    outputOrder - outputs the attributes for the order object; only functions in the interactive interpreter
+    retrieveOrder - sets attributes that are unused for other Order class methods; attributes are defined using a row in a database that is obtained through the row's ID value
+    addItemWithID - adds an inventory item to the order through direct database access using the row's ID value
+        exceededQuantity - flag for it the ordered quantity exceeds to quantity in storage
+    addItem - adds an inventory item to the order through an inventory object with an obtained ID value
+        exceededQuantity - flag for it the ordered quantity exceeds to quantity in storage
+    removeItemWithID - removes an inventory item from the order using the inventory item's ID value
+    removeItem - removes an inventory item from the order using the ID value of an inventory object
+    changeItemQuantityWithID - changes the ordered quantity of an inventory item using the ID of the inventory item
+        exceededQuantity - flag for it the ordered quantity exceeds to quantity in storage
+    changeItemQuantity - changes the ordered quantity of an inventory item using the ID of an inventory object
+        exceededQuantity - flag for it the ordered quantity exceeds to quantity in storage
+    setAddress - resets the full address for the order object
+    setPaymentMethod - resets the credit card for the order object
+    finalizeOrder - adds the order to the database; automatically assigns the order ID with the database row's ID value
+        date - date of the order finalization
+    deductInventory - uses the inventory ID values in items to alter the inventory items quantities and values in the database
+        quantities and values are altered using the alteredQuantityPerItem and alteredValuePerItem dictionaries
+    
+    List of views:
+    base - opens the main page
+    employeeMenu - opens the page with the full function suite
+    customerMenu - opens the page with only the functions that customers need for creating orders
+    inventoryMenu - opens the page with the full inventory function suite
+    listInventory - outputs a list of all stored inventory items
+    newInventoryItem - creates a new inventory object with an ID value of None
+    outputInventoryItem - outputs the attributes of the current inventory object
+    retrieveInventoryItem - creates an inventory object using the ID value for a database row
+    addCurrentInventoryItem - adds the current inventory object to the database; automatically assigns the database row's ID to the inventory object's ID value
+    addNewInventoryItem - creates a new inventory object and immediately adds the inventory object to the database
+    alterInventoryItem - resets the attributes for the inventory object, except for the inventory ID
+    alterInventoryQuantity - resets the quantity and value for the inventory object
+    commitAlteredInventoryItem - saves the alterations to an inventory object to the database using the inventory ID for the database row's ID value
+    deleteCurrentInventoryItem - deletes inventory object from the database using inventory ID for the database row's ID value
+    deleteSelectedInventoryItem - deletes an inventory row from the database using the row's ID value
+    userMenu - opens the page with the full user function suite
+    listUsers - outputs a list of all stored users
+    newUser - creates a new user object with an ID value of None
+    outputUser - outputs the attributes of the current user object
+    addCurrentUser - adds the the current user object to the database; automatically assigns the database row's ID to the user object's ID value
+    addNewUser - creates a new user object and immediately adds teh user object to the database
+    retrieveUser - creates a user object using the ID value for a database row
+    updateUserInfo - resets the attributes for the user object, except for user ID and email
+    commitUpdatedInfo - commits the alterations of the user object to the database using user ID as the database row's ID value
+    resetPassword - resets the password for the user object
+    commitResetPassword - commits the altered password of the user object to the database using the user ID as the database row's ID value
+    deleteCurrentUser - deletes the current user object from the database using the user ID as the database row's ID value
+    deleteSelectedUser - deletes a user row from the database using the row's ID value
+    loginUser - creates a user object using the email and password of a database row
+    orderMenu - opens the page with the full order function suite
+    listOrders - outputs a list of all stored orders
+    newOrder - creates a new order object using a user object; has an ID value of None
+    outputOrder - outputs the attributes of the current order object
+    retrieveOrder - outputs the attributes of an order stored in the database
+    setAddress - resets the full address for the order object
+    setPaymentMethod - resets the credit card for the order object
+    addItem - adds an inventory item to the order through an inventory object
+    addItemWithID - adds an inventory item to the order using a database row's ID value
+    removeItem - removes an inventory item using the ID value of an inventory object
+    removeItemWithID - removes an inventory item using a manually entered ID value for an inventory object
+    changeItemQuantity - changes the ordered quantity of an inventory item using the ID value of an inventory object
+    changeItemQuantityWithID - changes the ordered quantity of an inventory item using a manually entered ID value
+    finalizeOrder - adds the order object to the database; automatically assigns an ID value using the database row's ID value; automatically adds a date to the order object
+        automatically deducts the ordered quantity of each inventory item from the database
+"""
+
 from django.shortcuts import render
 from django.http import HttpResponse
 import sqlite3
